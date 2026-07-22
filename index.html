@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Individuale | Nutrologia, Endocrinologia, Nutrição e Medicina do Esporte</title>
+<meta name="description" content="Cuidado médico individualizado em Nutrologia, Endocrinologia, Nutrição, Medicina do Esporte e Clínica Geral. Atendimento particular, convênios credenciados e reembolso.">
+<meta property="og:title" content="Clínica Individuale">
+<meta property="og:description" content="Nutrologia, Endocrinologia, Nutrição, Medicina do Esporte e Clínica Geral. Agende sua consulta.">
+<meta property="og:image" content="assets/logo-vertical.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/logo-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #7DB26D;
+    --teal: #009894;
+    --azul: #00628B;
+    --azul-escuro: #024C6C;
+    --cinza: #4C4B4C;
+    --cinza-claro: #767576;
+    --mist: #F2F7F6;
+    --linha: #E3EDEB;
+    --branco: #FFFFFF;
+    --grad: linear-gradient(120deg, #7DB26D 0%, #009894 52%, #00628B 100%);
+    --sombra: 0 10px 30px rgba(0, 98, 139, 0.08);
+    --raio: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--cinza);
+    background: var(--branco);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: var(--teal); }
+
+  .container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+  }
+
+  h1, h2, .serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    color: var(--azul);
+    line-height: 1.15;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--grad);
+  }
+
+  /* ===== Botões ===== */
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+
+  .btn-primario {
+    background: var(--azul);
+    color: var(--branco);
+    box-shadow: 0 6px 18px rgba(0, 98, 139, 0.28);
+  }
+
+  .btn-primario:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-2px);
+  }
+
+  .btn-secundario {
+    color: var(--azul);
+    border: 1.5px solid var(--azul);
+    background: transparent;
+  }
+
+  .btn-secundario:hover { background: rgba(0, 98, 139, 0.06); }
+
+  .btn:focus-visible,
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  .btn-com-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+  }
+
+  .btn-com-icone svg { flex: none; }
+
+  /* Botão flutuante de WhatsApp */
+  .wa-flutuante {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 60;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform .2s ease;
+  }
+
+  .wa-flutuante:hover { transform: scale(1.08); }
+
+  /* ===== Header ===== */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+  }
+
+  .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .marca img { width: 46px; height: auto; }
+
+  .marca-texto { line-height: 1.1; }
+
+  .marca-texto .clinica {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--cinza);
+    font-weight: 700;
+  }
+
+  .marca-texto .nome {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--teal);
+    text-transform: uppercase;
+  }
+
+  nav.menu {
+    display: flex;
+    gap: 28px;
+  }
+
+  nav.menu a {
+    text-decoration: none;
+    color: var(--cinza);
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: color .2s ease;
+  }
+
+  nav.menu a:hover { color: var(--teal); }
+
+  .header-inner .btn { padding: 11px 22px; font-size: 0.92rem; }
+
+  /* ===== Hero ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #FAFDFC 0%, var(--mist) 100%);
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .fio-dna {
+    position: absolute;
+    right: -60px;
+    top: -40px;
+    height: 130%;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+    padding: 84px 0 92px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.7rem);
+    margin: 18px 0 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero p.sub {
+    font-size: 1.12rem;
+    max-width: 54ch;
+    margin-bottom: 30px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+
+  .selos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--cinza);
+  }
+
+  .selos li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .selos svg { flex: none; }
+
+  /* Cartão de cobertura no hero */
+  .cartao-cobertura {
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 28px;
+  }
+
+  .cartao-cobertura h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .cobertura-item + .cobertura-item {
+    border-top: 1px solid var(--linha);
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .cobertura-item strong {
+    display: block;
+    color: var(--azul);
+    font-size: 0.98rem;
+    margin-bottom: 6px;
+  }
+
+  .cobertura-item span { font-size: 0.9rem; }
+
+  .cartao-cobertura .link-detalhe {
+    display: inline-block;
+    margin-top: 18px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--teal);
+    text-decoration: none;
+  }
+
+  .cartao-cobertura .link-detalhe:hover { text-decoration: underline; }
+
+  /* ===== Seções ===== */
+  section { padding: 88px 0; }
+
+  /* A clínica */
+  .a-clinica {
+    background: var(--mist);
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .a-clinica .colunas {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .a-clinica h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+    margin: 14px 0 18px;
+  }
+
+  .a-clinica p + p { margin-top: 14px; }
+
+  .painel-clinica {
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 36px 30px;
+    text-align: center;
+  }
+
+  .painel-clinica img {
+    width: 110px;
+    margin: 0 auto 22px;
+  }
+
+  .painel-clinica ul {
+    list-style: none;
+    text-align: left;
+  }
+
+  .painel-clinica li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--cinza);
+  }
+
+  .painel-clinica li + li {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--linha);
+  }
+
+  .painel-clinica li svg { flex: none; margin-top: 3px; }
+
+  .titulo-secao { max-width: 640px; margin-bottom: 48px; }
+
+  .titulo-secao h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+    margin-top: 14px;
+  }
+
+  .titulo-secao p { margin-top: 12px; }
+
+  /* Especialidades */
+  .especialidades { background: var(--branco); }
+
+  .grade-especialidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .card-esp {
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    padding: 26px 22px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .card-esp:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+    border-color: rgba(0, 152, 148, 0.45);
+  }
+
+  .card-esp .icone {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--mist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .card-esp h3 {
+    font-size: 1.08rem;
+    color: var(--azul);
+    margin-bottom: 8px;
+  }
+
+  .card-esp p { font-size: 0.92rem; }
+
+  /* Como funciona */
+  .como-funciona { background: var(--mist); }
+
+  .passos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    counter-reset: passo;
+  }
+
+  .passo {
+    background: var(--branco);
+    border-radius: var(--raio);
+    border: 1px solid var(--linha);
+    padding: 30px 26px;
+    position: relative;
+  }
+
+  .passo .numero {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 3.4rem;
+    line-height: 1;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .passo h3 {
+    color: var(--azul);
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  .passo p { font-size: 0.95rem; }
+
+  /* Convênios */
+  .convenios .paineis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .painel {
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    padding: 30px 26px;
+    background: var(--branco);
+    height: 100%;
+  }
+
+  .painel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .painel.destaque::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--grad);
+  }
+
+  .painel h3 {
+    color: var(--azul);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .painel > p { font-size: 0.95rem; margin-bottom: 18px; }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .chips li {
+    background: var(--mist);
+    border: 1px solid var(--linha);
+    color: var(--azul);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    border-radius: 999px;
+  }
+
+  .nota-reembolso {
+    margin-top: 18px;
+    font-size: 0.88rem;
+    background: rgba(125, 178, 109, 0.12);
+    border-left: 3px solid var(--verde);
+    padding: 12px 14px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* FAQ */
+  .faq { background: var(--mist); }
+
+  .faq details {
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    padding: 0 24px;
+    margin-bottom: 14px;
+  }
+
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    font-weight: 700;
+    color: var(--azul);
+    font-size: 1.02rem;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--teal);
+    line-height: 1;
+    transition: transform .25s ease;
+    flex: none;
+  }
+
+  .faq details[open] summary::after { transform: rotate(45deg); }
+
+  .faq details p {
+    padding-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Localização */
+  .localizacao .colunas {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .localizacao h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+    margin: 14px 0 18px;
+  }
+
+  .endereco {
+    background: var(--mist);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    padding: 22px 24px;
+    margin: 18px 0 22px;
+  }
+
+  .endereco strong {
+    display: block;
+    color: var(--azul);
+    margin-bottom: 6px;
+  }
+
+  .endereco p { font-size: 0.95rem; }
+
+  .localizacao .mapa {
+    border-radius: var(--raio);
+    overflow: hidden;
+    border: 1px solid var(--linha);
+    box-shadow: var(--sombra);
+  }
+
+  .localizacao .mapa iframe {
+    display: block;
+    width: 100%;
+    height: 360px;
+    border: 0;
+  }
+
+  /* CTA final */
+  .cta-final {
+    background: linear-gradient(120deg, var(--azul) 0%, #007A80 60%, var(--teal) 100%);
+    color: var(--branco);
+    text-align: center;
+  }
+
+  .cta-final h2 {
+    color: var(--branco);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 14px;
+  }
+
+  .cta-final p {
+    max-width: 56ch;
+    margin: 0 auto 30px;
+    font-size: 1.08rem;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .cta-final .btn {
+    background: var(--branco);
+    color: var(--azul);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .cta-final .btn:hover {
+    background: #EFF7F6;
+    transform: translateY(-2px);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--branco);
+    padding: 56px 0 100px;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+  }
+
+  .footer-inner img { width: 190px; }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--cinza);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .footer-links a:hover { color: var(--teal); }
+
+  .footer-legal {
+    border-top: 1px solid var(--linha);
+    width: 100%;
+    padding-top: 22px;
+    font-size: 0.82rem;
+    color: var(--cinza-claro);
+  }
+
+  /* Animação de entrada */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+
+  .reveal.visivel {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .btn, .card-esp { transition: none; }
+  }
+
+  /* ===== Responsivo ===== */
+  @media (max-width: 900px) {
+    nav.menu { display: none; }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 56px 0 64px;
+    }
+
+    .a-clinica .colunas {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .localizacao .colunas {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .localizacao .mapa iframe { height: 280px; }
+
+    .fio-dna { display: none; }
+
+    .passos, .convenios .paineis { grid-template-columns: 1fr; }
+
+    section { padding: 64px 0; }
+  }
+
+  @media (max-width: 480px) {
+    .marca img { width: 38px; }
+    .marca-texto .clinica { letter-spacing: 0.3em; }
+    .marca-texto .nome { font-size: 1.02rem; letter-spacing: 0.1em; }
+    .header-inner { gap: 10px; }
+    .header-inner .btn {
+      padding: 10px 16px;
+      font-size: 0.84rem;
+      white-space: nowrap;
+    }
+    .hero-ctas .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="marca" href="#topo" aria-label="Clínica Individuale, início">
+      <img src="assets/logo-icone.png" alt="">
+      <span class="marca-texto">
+        <span class="clinica">Clínica</span>
+        <span class="nome">Individuale</span>
+      </span>
+    </a>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="#a-clinica">A clínica</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#convenios">Convênios</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-primario btn-com-icone js-wa" href="#">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+      Agendar consulta
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ===== Hero ===== -->
+  <div class="hero">
+    <svg class="fio-dna" viewBox="0 0 320 900" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="gradDna" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#7DB26D"/>
+          <stop offset="0.5" stop-color="#009894"/>
+          <stop offset="1" stop-color="#00628B"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#gradDna)" stroke-width="3" stroke-linecap="round" opacity="0.35">
+        <path d="M100 0 C 240 110, 240 190, 100 300 C -40 410, -40 490, 100 600 C 240 710, 240 790, 100 900"/>
+        <path d="M220 0 C 80 110, 80 190, 220 300 C 360 410, 360 490, 220 600 C 80 710, 80 790, 220 900"/>
+        <line x1="118" y1="45" x2="202" y2="45"/>
+        <line x1="140" y1="90" x2="180" y2="90"/>
+        <line x1="132" y1="210" x2="188" y2="210"/>
+        <line x1="112" y1="255" x2="208" y2="255"/>
+        <line x1="118" y1="345" x2="202" y2="345"/>
+        <line x1="140" y1="390" x2="180" y2="390"/>
+        <line x1="132" y1="510" x2="188" y2="510"/>
+        <line x1="112" y1="555" x2="208" y2="555"/>
+        <line x1="118" y1="645" x2="202" y2="645"/>
+        <line x1="140" y1="690" x2="180" y2="690"/>
+        <line x1="132" y1="810" x2="188" y2="810"/>
+        <line x1="112" y1="855" x2="208" y2="855"/>
+      </g>
+    </svg>
+
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow">Biotecnologia estética e medicina integrativa</span>
+        <h1>Sua saúde é única.<br>Seu cuidado também <em>deve&nbsp;ser</em>.</h1>
+        <p class="sub">Na Clínica Individuale, você encontra Nutrologia, Endocrinologia, Nutrição, Medicina do Esporte e Clínica Geral trabalhando de forma integrada, com um plano construído para a sua rotina e os seus objetivos.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primario btn-com-icone js-wa" href="#">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="btn btn-secundario" href="#convenios">Ver convênios atendidos</a>
+        </div>
+        <ul class="selos">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#009894" stroke-width="2"/><path d="M8 12.5l2.6 2.6L16 9.5" stroke="#009894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            5 especialidades integradas
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#009894" stroke-width="2"/><path d="M8 12.5l2.6 2.6L16 9.5" stroke="#009894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Particular e convênios
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#009894" stroke-width="2"/><path d="M8 12.5l2.6 2.6L16 9.5" stroke="#009894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Acompanhamento contínuo
+          </li>
+        </ul>
+      </div>
+
+      <aside class="cartao-cobertura reveal" aria-label="Formas de atendimento">
+        <h2>Como você pode se consultar</h2>
+        <div class="cobertura-item">
+          <strong>Particular</strong>
+          <span>Agenda flexível e valores informados antes do agendamento.</span>
+        </div>
+        <div class="cobertura-item">
+          <strong>Convênios credenciados</strong>
+          <span>Central Nacional Unimed, Seguro Unimed, Cassi, Gama Saúde e Vivest.</span>
+        </div>
+        <div class="cobertura-item">
+          <strong>Planos com reembolso</strong>
+          <span>Porto Saúde, Itaú Saúde, Bradesco Saúde, SulAmérica, Omint e Amil.</span>
+        </div>
+        <a class="link-detalhe" href="#convenios">Ver detalhes de cobertura</a>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ===== A clínica ===== -->
+  <section class="a-clinica" id="a-clinica">
+    <div class="container colunas">
+      <div class="reveal">
+        <span class="eyebrow">A clínica</span>
+        <h2>Medicina integrativa, com um plano para cada pessoa</h2>
+        <p>A Individuale nasceu para unir biotecnologia estética e medicina integrativa em um cuidado que enxerga a pessoa por inteiro. Em vez de tratar sintomas isolados, nossa equipe investiga causas, cruza informações e constrói um acompanhamento que respeita a sua história, o seu corpo e a sua rotina.</p>
+        <p>Do check-up ao acompanhamento de longo prazo, você conta com profissionais que conversam entre si e decidem juntos o melhor caminho para o seu resultado.</p>
+      </div>
+      <div class="painel-clinica reveal">
+        <img src="assets/logo-icone.png" alt="">
+        <ul>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#7DB26D" stroke-width="2"/><path d="M8 12.5l2.6 2.6L16 9.5" stroke="#7DB26D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Atendimento humanizado, sem pressa
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#009894" stroke-width="2"/><path d="M8 12.5l2.6 2.6L16 9.5" stroke="#009894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Especialidades que trabalham em conjunto
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#00628B" stroke-width="2"/><path d="M8 12.5l2.6 2.6L16 9.5" stroke="#00628B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Acompanhamento individualizado, baseado em evidências
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Especialidades ===== -->
+  <section class="especialidades" id="especialidades">
+    <div class="container">
+      <div class="titulo-secao reveal">
+        <span class="eyebrow">Especialidades</span>
+        <h2>Tudo o que a sua saúde precisa, em um só lugar</h2>
+        <p>Nossas especialidades conversam entre si. Você não repete a sua história a cada consulta: o seu plano de cuidado é um só.</p>
+      </div>
+      <div class="grade-especialidades">
+        <article class="card-esp reveal">
+          <div class="icone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v4M12 7c-3.5 0-6 2.6-6 6.2C6 17 8.5 21 12 21s6-4 6-7.8C18 9.6 15.5 7 12 7z" stroke="#009894" stroke-width="1.8" stroke-linecap="round"/><path d="M14.5 3.5C13.6 4.6 12.4 5 12 5c0-1 .8-2.3 2.5-2.5z" fill="#7DB26D"/></svg>
+          </div>
+          <h3>Nutrologia</h3>
+          <p>Avaliação médica do metabolismo, da composição corporal e da relação entre alimentação e saúde, com tratamento baseado em evidências.</p>
+        </article>
+        <article class="card-esp reveal">
+          <div class="icone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c2 3.5 5 6.5 5 10a5 5 0 0 1-10 0c0-3.5 3-6.5 5-10z" stroke="#009894" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.8 13.5a2.4 2.4 0 0 0 2.2 2.3" stroke="#009894" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Endocrinologia</h3>
+          <p>Diagnóstico e tratamento de alterações hormonais, tireoide, diabetes, obesidade e outras condições do sistema endócrino.</p>
+        </article>
+        <article class="card-esp reveal">
+          <div class="icone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21c0-6 3-10 8-11M20 3c-1 7-4 10-8 10" stroke="#009894" stroke-width="1.8" stroke-linecap="round"/><path d="M20 3c-5 0-8 2-8 6v4" stroke="#009894" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Nutrição</h3>
+          <p>Acompanhamento nutricional contínuo, com plano alimentar construído para a sua rotina e ajustado a cada retorno.</p>
+        </article>
+        <article class="card-esp reveal">
+          <div class="icone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h4l2.5-6 4 12L16 12h5" stroke="#009894" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Medicina do Esporte</h3>
+          <p>Saúde e performance para quem treina, do iniciante ao atleta, com foco em resultados e prevenção de lesões.</p>
+        </article>
+        <article class="card-esp reveal">
+          <div class="icone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3v5a4 4 0 0 0 8 0V3" stroke="#009894" stroke-width="1.8" stroke-linecap="round"/><path d="M10 12v3a5 5 0 0 0 10 0v-2" stroke="#009894" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="11" r="2" stroke="#009894" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Clínico Geral</h3>
+          <p>Consulta ampla para investigar sintomas, solicitar exames, orientar tratamentos e coordenar o seu cuidado com as demais especialidades.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Como funciona ===== -->
+  <section class="como-funciona" id="como-funciona">
+    <div class="container">
+      <div class="titulo-secao reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Do primeiro contato ao acompanhamento</h2>
+      </div>
+      <div class="passos">
+        <div class="passo reveal">
+          <span class="numero serif">1</span>
+          <h3>Agende sua consulta</h3>
+          <p>Fale com a nossa equipe pelo WhatsApp e escolha o melhor horário. Verificamos na hora a cobertura do seu convênio.</p>
+        </div>
+        <div class="passo reveal">
+          <span class="numero serif">2</span>
+          <h3>Passe por uma avaliação completa</h3>
+          <p>Na primeira consulta, o profissional analisa seu histórico, seus exames e seus objetivos para entender o quadro por inteiro.</p>
+        </div>
+        <div class="passo reveal">
+          <span class="numero serif">3</span>
+          <h3>Siga um plano feito para você</h3>
+          <p>Você sai com orientações claras e retorna para ajustes, com as especialidades trabalhando juntas no seu resultado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Convênios ===== -->
+  <section class="convenios" id="convenios">
+    <div class="container">
+      <div class="titulo-secao reveal">
+        <span class="eyebrow">Cobertura</span>
+        <h2>Convênios e formas de atendimento</h2>
+        <p>Confira como você pode se consultar na Individuale. Se ficar em dúvida sobre o seu plano, fale com a nossa equipe: verificamos a cobertura para você.</p>
+      </div>
+      <div class="paineis">
+        <div class="painel reveal">
+          <h3>Particular</h3>
+          <p>Consultas avulsas ou acompanhamento contínuo, com agenda flexível e valores informados antes do agendamento.</p>
+          <ul class="chips">
+            <li>Sem carência</li>
+            <li>Horários flexíveis</li>
+          </ul>
+        </div>
+        <div class="painel destaque reveal">
+          <h3>Convênios credenciados</h3>
+          <p>Atendimento direto pelo seu plano, sem custo adicional na consulta.</p>
+          <ul class="chips">
+            <li>Central Nacional Unimed</li>
+            <li>Seguro Unimed</li>
+            <li>Cassi</li>
+            <li>Gama Saúde</li>
+            <li>Vivest</li>
+          </ul>
+        </div>
+        <div class="painel reveal">
+          <h3>Planos com reembolso</h3>
+          <p>Você se consulta na clínica e solicita o reembolso ao seu plano.</p>
+          <ul class="chips">
+            <li>Porto Saúde</li>
+            <li>Itaú Saúde</li>
+            <li>Bradesco Saúde</li>
+            <li>SulAmérica</li>
+            <li>Omint</li>
+            <li>Amil</li>
+          </ul>
+          <p class="nota-reembolso">Emitimos toda a documentação necessária, como nota fiscal e relatório de atendimento, e orientamos você no passo a passo do pedido de reembolso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="duvidas">
+    <div class="container">
+      <div class="titulo-secao reveal">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>O que os pacientes costumam perguntar</h2>
+      </div>
+      <div class="reveal">
+        <details>
+          <summary>Como funciona o atendimento por reembolso?</summary>
+          <p>Você agenda e realiza a consulta normalmente na clínica. Depois, nós emitimos a nota fiscal e o relatório de atendimento para que você solicite o reembolso no aplicativo ou site do seu plano. O valor devolvido depende das regras do seu contrato, e a nossa equipe orienta você em cada etapa.</p>
+        </details>
+        <details>
+          <summary>Meu convênio não está na lista. Posso me consultar mesmo assim?</summary>
+          <p>Pode, sim. Você pode se consultar na modalidade particular. Vale também verificar com o seu plano se ele oferece reembolso para consultas com profissionais fora da rede, o que é comum em várias categorias de contrato.</p>
+        </details>
+        <details>
+          <summary>Como faço para agendar uma consulta?</summary>
+          <p>É simples: clique em qualquer botão de agendamento desta página e fale com a nossa equipe pelo WhatsApp. Confirmamos a cobertura do convênio, os valores e o melhor horário para você.</p>
+        </details>
+        <details>
+          <summary>Posso ser acompanhado por mais de uma especialidade?</summary>
+          <p>Sim, e esse é um dos nossos diferenciais. Médicos e nutricionista atuam de forma integrada: quem cuida de você conversa entre si e segue um único plano, construído para os seus objetivos.</p>
+        </details>
+        <details>
+          <summary>O que devo levar na primeira consulta?</summary>
+          <p>Traga seus exames recentes, a lista de medicamentos e suplementos em uso e, se for atendimento por convênio, a carteirinha e um documento com foto. Se não tiver exames em mãos, não tem problema: o profissional solicita o que for necessário.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Localização ===== -->
+  <section class="localizacao" id="localizacao">
+    <div class="container colunas">
+      <div class="reveal">
+        <span class="eyebrow">Onde estamos</span>
+        <h2>Atendimento presencial no Tatuapé</h2>
+        <p>Nossa unidade fica em uma região de fácil acesso, a poucos minutos da estação Tatuapé, dentro da Clínica Dimed.</p>
+        <div class="endereco">
+          <strong>Unidade Tatuapé, Clínica Dimed</strong>
+          <p>Rua Fernandes Pinheiro, 97 / 105<br>Tatuapé, São Paulo, SP<br>CEP 03308-060</p>
+        </div>
+        <a class="btn btn-secundario" href="https://www.google.com/maps/search/?api=1&query=Rua+Fernandes+Pinheiro%2C+105+-+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP%2C+03308-060" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+      <div class="mapa reveal">
+        <iframe src="https://maps.google.com/maps?q=Rua%20Fernandes%20Pinheiro%2C%20105%20-%20Tatuap%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003308-060&z=16&output=embed" title="Mapa da unidade Tatuapé da Clínica Individuale" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA final ===== -->
+  <section class="cta-final" id="agendar">
+    <div class="container reveal">
+      <h2>Comece hoje o seu acompanhamento</h2>
+      <p>Fale com a nossa equipe, tire suas dúvidas e encontre o melhor horário. A sua saúde merece um cuidado feito sob medida.</p>
+      <a class="btn js-wa" href="#">Agendar consulta pelo WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <img src="assets/logo-vertical.png" alt="Clínica Individuale, biotecnologia estética e medicina integrativa">
+    <div class="footer-links">
+      <a href="#a-clinica">A clínica</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#convenios">Convênios</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#" class="js-wa">Agendar consulta</a>
+    </div>
+    <div class="footer-legal">
+      <p>Unidade Tatuapé, Clínica Dimed: Rua Fernandes Pinheiro, 97 / 105, Tatuapé, São Paulo, SP, CEP 03308-060</p>
+      <p>© 2026 Clínica Individuale. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-flutuante js-wa" href="#" aria-label="Falar com a clínica pelo WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+</a>
+
+<script>
+  const WHATSAPP_NUMERO = "5511925258016";
+  const WHATSAPP_MENSAGEM = "Ola! Gostaria de agendar uma consulta na Clinica Individuale.";
+
+  document.querySelectorAll(".js-wa").forEach(function (el) {
+    el.href = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
+    el.target = "_blank";
+    el.rel = "noopener";
+  });
+
+  const observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visivel");
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".reveal").forEach(function (el) { observador.observe(el); });
+</script>
+
+</body>
+</html>
